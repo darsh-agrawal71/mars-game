@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-position: center;
+                background-size: cover;
+                overflow-y: hidden;
+            }
+
+            ol {color: white; display: inline; width: 100%; white-space: nowrap; height: 1em; overflow-x: hidden;}
+            li {display: inline;}
+            p  {color: white;}
+
+            #myCanvas {
+                border-width: 10px;
+                background-color: white;
+                border-style: ridge;
+            }
+
+            h1,
+            h4 {
+                color: white !important;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+        />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="main.js" type="module" defer></script>
+        <script type="module" src="js/globals.js" defer></script>
+        <title>Moving Rover On Mars</title>
+    </head>
+    <body>
+        <div style="text-align: center">
+
+            <canvas width="1000" height="600" id="c"></canvas>
+            <br><br>
+            <button id="e" class="btn btn-success">Save score</button>
+			<button id="g" class="btn btn-info">Get Leaderboard</button>
+            <button id="l" class="btn btn-danger">Clear Leaderboard</button>
+            <p>Score: <p id="s">    </p> </p>
+<br>
+<h4 id="lh"></h4>
+            <ol id="o"></ol>
+        </div>
+    </body>
+</html>
