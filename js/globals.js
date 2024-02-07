@@ -24,6 +24,7 @@ const GITHUB_ROOT_PREFIX = 'mars-game';
 const SLASH = '/';
 
 function isRunningOnGithub(host=window.location.hostname) {
+ console.log(host)
     return GITHUB_HOSTNAME === host;
 }
 
