@@ -19,15 +19,15 @@ const cnv = document.querySelector('#c')
 //#region Patch #1 
 // FIXES: #1
 
-export const GITHUB_HOSTNAME = 'darsh-agrawal71.github.io';
-export const GITHUB_ROOT_PREFIX = 'mars-game';
-export const SLASH = '/';
+const GITHUB_HOSTNAME = 'darsh-agrawal71.github.io';
+const GITHUB_ROOT_PREFIX = 'mars-game';
+const SLASH = '/';
 
-export function isRunningOnGithub(host=window.location.hostname) {
+function isRunningOnGithub(host=window.location.hostname) {
     return GITHUB_HOSTNAME === host;
 }
 
-export function convertFSResLinkToGithubResLink(fsLink) {
+function convertFSResLinkToGithubResLink(fsLink) {
     if (!isRunningOnGithub()) return fsLink; // Not running on github 🤷‍♂️
     let result = GITHUB_HOSTNAME + GITHUB_ROOT_PREFIX;
     if (fsLink.at(0) !== SLASH) { // Add a slash
