@@ -28,12 +28,18 @@ function isRunningOnGithub(host=window.location.hostname) {
     return GITHUB_HOSTNAME === host;
 }
 
+
+/**
+ * 
+ * @param {string} fsLink 
+ * @returns 
+ */
 function convertFSResLinkToGithubResLink(fsLink) {
     if (!isRunningOnGithub()) return fsLink; // Not running on github 🤷‍♂️
-    let result = GITHUB_HOSTNAME + GITHUB_ROOT_PREFIX;
-    if (fsLink.at(0) !== SLASH) { // Add a slash
-       result += SLASH;
-    }
+    let result = GITHUB_HOSTNAME + SLASH + GITHUB_ROOT_PREFIX;
+    fsLink = fsLink.replace(/..\//g, "")
+    result += SLASH;
+    
     
     result += fsLink;
     
