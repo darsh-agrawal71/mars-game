@@ -1,4 +1,4 @@
-import { cnv } from "../globals.js";
+import { cnv, convertFSResLinkToGithubResLink } from "../globals.js";
 import collidingWith from "../collidingWith.js";
 
 /**
@@ -61,13 +61,13 @@ export function RenderImageSprites(sprites) {
 }
 
 /**
- * @param {String} imgPath the path of the image
+ * @param {String} imgPath the path of the image. Will automatically convert to github-friendly link if needed [#1].
  * @param {VoidFunction} callback called after image is fetched. must have one parameter for the url
  *  @returns {Promise<String>} that will return the blob url.
  */
 
 export const getImage = (imgPath, callback) =>
-    fetch(imgPath)
+    fetch(convertFSResLinkToGithubResLink(imgPath))
         .then((img) => img.blob())
         .then((blob) => URL.createObjectURL(blob))
         .then(callback);
