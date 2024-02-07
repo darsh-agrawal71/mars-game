@@ -67,7 +67,7 @@ export function RenderImageSprites(sprites) {
  */
 
 export const getImage = (imgPath, callback) =>
-    fetch(convertFSResLinkToGithubResLink(imgPath))
+    fetch(imgPath)
         .then((img) => img.blob())
         .then((blob) => URL.createObjectURL(blob))
         .then(callback);
