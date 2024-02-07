@@ -37,7 +37,7 @@ function isRunningOnGithub(host=window.location.hostname) {
 function convertFSResLinkToGithubResLink(fsLink) {
     if (!isRunningOnGithub()) return fsLink; // Not running on github 🤷‍♂️
     let result = GITHUB_HOSTNAME + SLASH + GITHUB_ROOT_PREFIX;
-    fsLink = fsLink.replace(/..\//g, "")
+    fsLink = fsLink.replaceAll("../", "")
     result += SLASH;
     
     
